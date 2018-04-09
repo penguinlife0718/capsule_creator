@@ -1,0 +1,661 @@
+@import './sourse.scss';
+@mixin debug {
+    border: 1px solid #000;
+}
+
+
+html,
+button,
+input,
+select,
+textarea {
+    // -webkit-font-smoothing: antialiased;
+    // font-family: 'cwTeXHei', serif;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+}
+
+//鎖住視窗不可拖移(mac)
+html {
+    overflow: hidden;
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    font-weight: 400;
+    line-height: 1.5;
+    font-family: 'Noto Sans TC', sans-serif; // -webkit-perspective: 1000px;
+}
+
+html,
+body {
+    //todo：疑似body可拖曳，必須解決，跟overflow-x: hideen 有關嗎？ =>解決
+    margin: 0;
+    padding: 0;
+    color: #4D4D4D;
+    background-color: white;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+// 導覽列
+#nav {
+    .navbar {
+        background-color: $color-nav;
+        height: 60px;
+    }
+    .nav-link {
+        color: $colro-link !important; // background-color: #fff;
+        margin: 0px 10px;
+        font-size: 14px;
+    }
+    .active {
+        color: $color-link-hover;
+    }
+    .nav-link:hover {
+        color: $color-link-hover !important;
+    }
+    .navbar-brand {
+        img {
+            height: 30px;
+            margin-bottom: 5px;
+        }
+    } //導覽列縮放鈕
+    .navbar-toggler {
+        border: 0 !important;
+    }
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='gray' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
+}
+
+// 導覽列end
+// 頂部owl欄位
+#owlTop {
+    margin-top: 60px;
+    position: relative;
+    background-size: cover;
+    .item {
+        position: relative;
+        width: 100%;
+        overflow: hidden; //文字欄
+        .owl-caption {
+            position: absolute;
+            width: 100%;
+            padding: 10px;
+            right: 0;
+            left: 0;
+            bottom: 0%;
+            z-index: 10;
+            background-color: $color-owl-caption-bg;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            h4 {
+                margin: 0 !important;
+                padding: 0 !important;
+                font-size: 16px;
+                font-weight: 400;
+                color: $color-owl-caption;
+            }
+        }
+    } //切換的點點
+    .owl-dots {
+        margin: 10px 0 0 0;
+    }
+}
+
+// 頂部owl欄位end
+// about欄位
+#about {
+    position: relative;
+    min-height: 600px;
+    .row {
+        .aboutUsBg {
+            min-height: 440px;
+            width: 100%;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("/wordpress/src/assets/img/large/younameit.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin-top: 100px;
+            padding: 20px;
+            .aboutUs {
+                position: relative;
+                display: block;
+                min-height: 400px;
+                width: 566px;
+                padding: 30px;
+                background-color: $aboutUs-bg;
+                opacity: .85;
+                color: $about-line;
+                hr {
+                    width: 68px;
+                    border: 5px solid $about-line;
+                }
+                h3 {
+                    font-family: 'URWDINCond';
+                    font-size: 50px;
+                    font-weight: bold;
+                    letter-spacing: 5px;
+                }
+                span {
+                    text-align: justify;
+                    margin: 15px 0;
+                    width: 100%;
+                    font-size: 1em;
+                    line-height: 16px;
+                    letter-spacing: 1px;
+                    font-weight: 400;
+                    color: $about-line;
+                }
+                .joinWrap-lg {
+                    position: absolute;
+                    overflow: hidden;
+                    width: 170px;
+                    height: 55px;
+                    background-color: $join-bg;
+                    opacity: .8;
+                    bottom: 10%;
+                    left: 90%;
+                    padding-right: 10px;
+                    font-family: 'Ubuntu', 'Open Sans', sans-serif;
+                    font-size: 26px;
+                    letter-spacing: 4px;
+                    transition: all 0.2s ease-in-out;
+                    line-height: 1000px;
+                    span.join,
+                    span.joinHover {
+                        color: white;
+                        font-weight: 500;
+                    }
+                    span.join {
+                        height: 55px;
+                        margin: 0px;
+                        display: flex;
+                        justify-content: flex-end;
+                        align-items: center;
+                        letter-spacing: 4px;
+                    }
+                    span.joinHover {
+                        display: flex;
+                        justify-content: flex-end;
+                        align-items: center;
+                        text-align: center;
+                        margin-top: -0.5em;
+                        opacity: 0;
+                        letter-spacing: 4px;
+                        line-height: 1.5em;
+                    }
+                }
+                .joinWrap-lg:hover {
+                    height: 150px;
+                    width: 240px;
+                    span.join {
+                        margin-top: -1em;
+                        opacity: 0;
+                    }
+                    span.joinHover {
+                        opacity: 1;
+                    }
+                }
+                .joinWrap-md {
+                    width: 250px;
+                    height: 55px;
+                    margin-top: 10px;
+                    padding-top: 3px;
+                    background-color: #4d4d4d;
+                    color: white;
+                    font-family: 'Noto Sans TC', sans-serif;
+                    font-size: 30px;
+                    letter-spacing: 2px;
+                    text-align: center;
+                    cursor: pointer;
+                }
+                .span-md {
+                    width: 90%;
+                    line-height: 20px;
+                    font-weight: 300;
+                    .yt-sm {
+                        text-align: center;
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+        @include media-breakpoint-down(md) {
+            .aboutUsBg {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .aboutUs {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 100%;
+                    h3 {
+                        text-align: center;
+                        height: 50px;
+                        margin: 0px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// about欄位end
+// project欄位
+#project {
+    hr {
+        width: 66%;
+        background: $color_black;
+    }
+    #owlProject {
+        margin: 10px 0;
+        .item {
+            img:hover {
+                opacity: .6;
+                transition: .3s ease-out;
+            }
+        }
+    }
+    .owl-dots {
+        display: none;
+    }
+}
+
+// project欄位end
+// roles欄位
+#roles {
+    position: relative; // padding-bottom: 100px; 
+    min-height: 400px;
+    margin-top: 100px;
+    #main {
+        // display: flex;
+        border: #4D4D4D 5px solid; // height: 250px;
+        #rolesWrap {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 250px;
+            margin-left: 25px;
+            padding-top: 25px;
+            text-align: center;
+            hr {
+                width: 70px;
+                border: 5px solid $about-line;
+            }
+            .roleTitle {
+                font-family: 'URWDINCond';
+                font-size: 50px;
+                font-weight: bold;
+                letter-spacing: 5px;
+                line-height: 1em;
+                margin-top: 5px;
+            }
+            .roleContext {
+                font-weight: 500;
+                padding-bottom: 10px;
+                letter-spacing: 2px;
+                margin-top: 8px;
+            }
+            .btn {
+                max-width: 154px;
+                margin: 10px 0;
+            }
+            .btn-outline-dark {
+                color: $color_black;
+                border: 2px solid $color_black;
+                font-size: 20px;
+                font-weight: bold;
+                font-family: 'Noto Sans', sans-serif;
+                &:hover {
+                    color: white;
+                    background-color: $color_black;
+                }
+            }
+            .roleImageWrap {
+                position: absolute;
+                display: flex;
+                width: 150%; // max-height: 320px;
+                // height: 320px;
+                margin-left: auto;
+                margin-right: auto;
+                left: 125%;
+                top: 0;
+                transform: translateY(-12.5%);
+                .roleImage {
+                    height: 320px;
+                    width: 100%;
+                    flex: 1;
+                    position: relative; // min-height: 320px;
+                    // height: 320px;
+                    overflow: hidden;
+                    z-index: 1;
+                    transition: flex-grow .2s, opacity .2s;
+                    transform: skewX(-15deg) translateZ(0);
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        width: 200%;
+                        height: 100%;
+                        left: -50%;
+                        top: 0;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        -webkit-transition: width .2s, transform .2s;
+                        transition: transform .2s, width .2s;
+                        transform: skewX(15deg);
+                    }
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: white;
+                        opacity: 0;
+                        -webkit-transition: opacity .2s;
+                        transition: opacity .2s;
+                    }
+                    &:hover {
+                        flex: 2;
+                        &:after {
+                            opacity: .3;
+                            background-color: #404040;
+                        }
+                        article {
+                            color: white;
+                            opacity: 1;
+                            transition: opacity .2s .2s, transform .2s .2s;
+                        }
+                    }
+                    &:nth-child(1):before {
+                        background-image: url('/wordpress/src/assets/img/head/head_sanyuan.png');
+                    }
+                    &:nth-child(2):before {
+                        background-image: url('/wordpress/src/assets/img/head/head_kensan.png');
+                    }
+                    &:nth-child(3):before {
+                        background-image: url('/wordpress/src/assets/img/head/head_blackbear.png');
+                    }
+                    &:nth-child(4):before {
+                        background-image: url('/wordpress/src/assets/img/head/head_sorryboner.png');
+                    }
+                    article {
+                        display: flex;
+                        -webkit-box-orient: vertical;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        position: relative;
+                        padding: 12px;
+                        width: 100%;
+                        height: 100%;
+                        text-align: center;
+                        color: white;
+                        z-index: 1;
+                        opacity: 0;
+                        transform: skewX(15deg);
+                        .roleName {
+                            font-size: 24px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(md) {
+    #roles {
+        height: 700px;
+        #main {
+            height: 600px; //定高為600 
+            #rolesWrap {
+                height: 600px;
+                margin: 0;
+                left: 50%;
+                transform: translate(-50%);
+                .btn {
+                    margin-top: 350px; //調整位置
+                }
+                .roleImageWrap {
+                    width: 135%;
+                    left: 50%;
+                    top: 25%;
+                    transform: translateX(-50%);
+                    .roleImage {
+                        transform: none;
+                        &:before {
+                            width: 135%;
+                            left: 50%;
+                            transform: translateX(-50%);
+                        }
+                        &:hover {
+                            flex: 1.7;
+                        }
+                        article {
+                            transform: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(xs) {
+    #roles {
+        height: 550px !important;
+        #main {
+            height: 450px !important;
+            .btn {
+                margin-top: 215px !important;
+            }
+            .roleImage {
+                height: 200px !important;
+            }
+        }
+    }
+}
+
+// roles欄位end
+// network欄位
+#network {
+    min-height: 600px;
+    text-align: center;
+    color: $color-network;
+    background: linear-gradient(to bottom, rgba(100, 100, 100, 0.5), rgba(100, 100, 100, 0.5)), url(/wordpress/src/assets/img/network_bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+    .networkLine {
+        width: 70px;
+        border: 5px solid $color-network;
+    }
+    .networkTitle {
+        font-family: 'URWDINCond';
+        font-size: 50px;
+        font-weight: bold;
+        letter-spacing: 5px;
+        line-height: 1em;
+    }
+    .networkSubTitle {
+        margin-top: 10px;
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+    .networkDesc {
+        margin-bottom: 50px;
+        p {
+            margin: 1em 0;
+            text-align: justify;
+            letter-spacing: 2px;
+        }
+    }
+    .networkVideo {
+        margin-bottom: 50px;
+    }
+    .networkPartner {
+        padding: 10px 0;
+        border-top: 1px solid white;
+        border-bottom: 1px solid white;
+        .networkPartnerTitleBg {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .networkPartnerTitle {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                h3 {
+                    padding-top: 10px;
+                    font-size: 50px;
+                    font-weight: bold;
+                    letter-spacing: 5px;
+                    font-family: 'URWDINCond';
+                    line-height: 1em;
+                }
+            }
+        }
+        .networkPartnerIcon {
+            height: 150px;
+            display: flex;
+            background-image: url('/wordpress/src/assets/img//icon/yahay.png');
+            background-size: contain;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+    }
+    .networkJoinBtn {
+        width: 100%;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        .btn {
+            max-width: 180px;
+        }
+        .btn-outline-light {
+            font-size: 20px;
+            font-family: sans-serif;
+            font-weight: 900;
+            letter-spacing: 4px;
+            padding: 0 35px;
+            border: 3px solid white;
+            &:hover {
+                color: gray;
+                border: 3px solid rgba(gray, .8);
+            }
+        }
+    }
+}
+
+// network欄位end
+// footer欄位
+footer {
+    height: 200px;
+    padding: 60px;
+    .row {
+        .cubeWrap,
+        .cubeLargeWrap {
+            padding: 0px;
+        }
+        .cube {
+            color: #fff;
+            position: relative;
+            height: 80px;
+            padding: 0;
+            transform-style: preserve-3d;
+            font-weight: 300;
+            font-size: 9px;
+            &:hover {
+                .cubeFront {
+                    transform: rotateX(90deg);
+                    transition: transform 400ms cubic-bezier(0.35, 1, .25, 1);
+                }
+                .cubeBottom {
+                    transform: rotateX(0deg);
+                    transition: transform 400ms cubic-bezier(0.35, 1, .25, 1);
+                }
+            } //front為轉動前 bottom為轉動後
+            //依靠translateX達成轉動效果
+            //translate-origin達成位置調整
+            //貝茲曲線達成轉動滑順效果
+            .cubeFront,
+            .cubeBottom {
+                position: absolute;
+                display: flex;
+                width: 100%;
+                height: 80px;
+                top: 0;
+                left: 0;
+                text-align: center;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                font-family: "Lato", Verdana, sans-serif; // -webkit-font-smoothing: antialiased;
+                color: white;
+                transition: transform 400ms cubic-bezier(0.35, 1, .25, 1);
+                transform-origin: 0px 40px -40px;
+            }
+            .cubeFront {
+                transform: translateX(0px);
+            }
+            .cubeBottom {
+                transform: rotateX(-90deg);
+            }
+            .cubeGreen {
+                background-color: #00AA90;
+            }
+            .cubeBlack {
+                background-color: #4D4D4D;
+            }
+            .cubeGray {
+                background-color: #a6a6a6;
+            }
+            .imgWrap {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                #iconYt {
+                    height: 25px;
+                }
+                #iconFb {
+                    height: 30px;
+                }
+            }
+            .fa {
+                color: #fff;
+            }
+        }
+        .cubeLarge {
+            font-size: 14px;
+        }
+    }
+}
+
+@include media-breakpoint-down(md) {
+    footer {
+        height: 280px;
+        padding: 60px;
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    footer {
+        height: 160px;
+        padding: 0px;
+    }
+}
+
+// footer欄位end

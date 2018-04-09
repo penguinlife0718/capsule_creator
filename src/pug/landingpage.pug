@@ -1,0 +1,273 @@
+<?php /* Template Name: creator */ ?>
+<!DOCTYPE html>
+html(lang="zh-tw")
+    head
+    
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        meta(http-equiv="Access-Control-Allow-Origin" content="*")
+        title creator
+        <link href="<?php echo get_bloginfo('template_directory'); ?>/creator/landingpage.css" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css" >
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.theme.default.min.css">  
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src='<?php echo get_stylesheet_directory_uri();?>/creator/dist/tether/dist/js/tether.js'></script>                
+        <script src='<?php echo get_stylesheet_directory_uri();?>/creator/js/youtubeVideo.js'></script>                                                     
+        <script src='<?php echo get_stylesheet_directory_uri();?>/creator/js/script.js'></script>
+      
+    body
+        //-nav
+        #nav
+            nav.navbar.navbar-expand-md.fixed-top.navbar-dark
+                //- brand
+                a.navbar-brand(href="/wordpress/index.php/creator")
+                    img(src="/wordpress/src/assets/img/capsule_w.png")
+                //- RWD icon 解決icon下移問題
+                button.navbar-toggler(type="button" data-toggle="collapse" data-target=".dual-collapse2" aria-expanded="false")
+                    span.navbar-toggler-icon
+
+                .navbar-collapse.collapse.w-100.order-1.order-sm-0.dual-collapse2
+                    ul.navbar-nav.mr-auto
+                        li.nav-item
+                            a.nav-link(href="/wordpress/index.php/category/creators/") CREATORS
+                        li.nav-item
+                            a.nav-link(href="/wordpress/index.php") NEWS
+                        li.nav-item
+                            a.nav-link(href="#") PARTNERSHIP
+
+                .navbar-collapse.collapse.w-100.order-3.dual-collapse2
+                    ul.navbar-nav.ml-auto
+                        li.nav-item
+                            a.nav-link(href="#") 企業資訊
+                                .fa.fa-file               
+                        li.nav-item
+                            a.nav-link(href="#") 這邊在放點東西好了
+        //-owlTop
+        .owl-carousel.owl-theme#owlTop
+            .item
+                img(src="/wordpress/src/assets/img/sanyuan.jpg")
+                //- .youtube
+                .owl-caption
+                    h4 敬請期待！Sanyuan Taiwan首次公開表演！
+                    //-Todo：切換文章
+            .item
+                img(src="/wordpress/src/assets/img/yellowBrother.jpg")
+                .owl-caption
+                    h4 黃氏兄弟破十萬訂閱了！以後也會繼續努力！
+            .item
+                img(src="/wordpress/src/assets/img/red.jpg")
+                .owl-caption
+                    h4 我不是在遊戲，就是在遊戲路上！阿紅RedKai第二頻道突破十萬訂閱！！
+            .item
+                img(src="/wordpress/src/assets/img/5aa60539f0a24_capsule.png")
+                .owl-caption
+                    h4 YouTube 排行榜大公開！來看看 CAPSULE 創作者的強勢成長！
+        //-about
+        section#about
+            .row
+                .col-lg-10.offset-lg-1.col-12
+                    .aboutUsBg
+                        .aboutUs
+                            hr(align="left").d-none.d-lg-block
+                            hr(align="center").d-lg-none.d-lg-none
+                            h3 ABOUT US
+                            span.d-none.d-lg-block
+                                | 「每位YouTuber，都是創造社群影音的Creator。」
+                                br
+                                | CAPSULE. 全力幫助YouTube影音創作者頻道迅速成長，接觸更多的粉絲。
+                                br
+                                br
+                                | 為了讓Creator更專心於創作，我們在內容創作上提供：
+                                br
+                                br
+                                | 頻道經營策略、拍攝場地、設備、技術支援、視覺設計等服務。
+                                br
+                                br
+                                | 也能協助Creator們舉辦實體交流活動、規劃粉絲互動平台、
+                                br
+                                | 與其他Creator交流，甚至是MV製作、舉辦大型演唱會等。
+                                br
+                                br
+                                | 我們的理念是Creator first：
+                                br
+                                | 全力支持具No.1或Only 1成長潛力的創作者，
+                                br
+                                br
+                                | 我們期望作為Creator們最親近的Buddy，一起在創作的路上前進。
+                            span.d-lg-none.d-lg-none.span-md
+                                .yt-sm 「 YouTuber 是創造社群影音的Creator！
+                                br
+                                | CAPSULE. 全力幫助YouTube影音創作者，讓頻道迅速成長，接觸更多的粉絲，為了讓Creator更專心於創作，我們在內容創作上提供：頻道經營策略、拍攝場地、設備、後製技術、視覺設計等服務；也能協助Creator們舉辦實體交流活動、規劃粉絲互動平台、與其他創作者交流，甚至是MV製作、舉辦演唱會等。
+                                br
+                                br
+                                | 我們的理念是Creator first：CAPSULE. 會全力支持具成長潛力的創作者，期望作為Creator們最親近的Buddy，一起在創作的路上前進。
+
+                            .joinWrap-lg.d-none.d-lg-block 
+                                .wrap
+                                    span.join JOIN
+                                    span.joinHover 
+                                        | BECOME
+                                        br
+                                        | CAPSULE
+                                        br
+                                        | CREATOR
+                            .joinWrap-md.d-lg-none JOIN
+        //-project
+        section#project
+            hr        
+            .row
+                .col-sm-10.offset-sm-1
+                    .owl-carousel.owl-theme#owlProject
+                        .item
+                            a(href="https://www.youtube.com/watch?v=HcMseKB6JAw")
+                                img(src='/wordpress/src/assets/img/cre_bnr_left.png')
+                        .item
+                            a(href="https://www.youtube.com/watch?v=TCUt35GANpE&list=PLVCL01Hwediahg9duWYur79OB0wP5fXAj")
+                                img(src='/wordpress/src/assets/img/cre_bnr_right1.png')
+                        .item
+                            a(href="https://www.youtube.com/watch?v=4gmSztmSlZg")
+                                img(src='/wordpress/src/assets/img/cre_bnr_right.png')  
+            hr
+        //-roles
+        section#roles
+            .row
+                .col-lg-10.offset-lg-1.col-8.offset-2#main
+                    .row
+                        .col-lg-4.col-12#rolesWrap
+                            hr
+                            .roleTitle CREATORS
+                            .roleContext CAPSULE. 的專屬Creator
+                            button.btn.btn-outline-dark SEE MORE
+                                .fa.fa-angle-right
+                            .roleImageWrap
+                                .roleImage
+                                    article
+                                        h3.roleName 三原慧悟
+                                .roleImage
+                                    article
+                                        h3.roleName 謙桑                           
+                                .roleImage
+                                    article
+                                        h3.roleName 黑仔熊                           
+                                .roleImage
+                                    article
+                                        h3.roleName Sorry Boner
+        #network.jumbotron.jumbotron-fluid
+            .container
+                .row
+                    .col
+                        hr.networkLine
+                        .networkTitle NETWORK
+                        .networkSubTitle 接近90%的數位行銷內容來自影音。
+                .row
+                    .col-lg-8.offset-lg-2.col-10.offset-1
+                        .networkDesc 
+                            p 相較於傳統以圖文為主的行銷方式，影音行銷更能夠抓住顧客的眼球；CAPSULE能協助企業品牌抓緊數位影音行銷的趨勢，媒合Creator進行合作；幫助品牌行銷最佳化、也能幫助Creator賺取收入以持續創作，達到雙贏。
+                .row
+                    .col-lg.offset-lg-0.col-10.offset-1.networkVideo
+                        .embed-responsive.embed-responsive-16by9
+                            #video_1
+                    .col-lg.offset-lg-0.col-10.offset-1.networkVideo
+                        .embed-responsive.embed-responsive-16by9
+                            #video_2
+                    .col-lg.offset-lg-0.col-10.offset-1.networkVideo
+                        .embed-responsive.embed-responsive-16by9
+                            #video_3
+                .row-md
+                    .col.networkPartner
+                        .row
+                            .col-lg-5.col-12.networkPartnerTitleBg
+                                .networkPartnerTitle
+                                    .row
+                                        .col
+                                            hr.networkLine
+                                            h3 PARTNERS
+                            .col-lg-6.col-12
+                                .networkPartnerIcon
+                .row
+                    .networkJoinBtn
+                        .btn.btn-outline-light JOIN US
+        footer
+            .row
+                .col-lg-11.offset-lg-1.col-12.offset-0
+                    .row
+                        .col-lg.col-3.cubeWrap
+                            .cube
+                                .cubeFront.cubeGreen
+                                    .imgWrap
+                                        a(href="https://www.youtube.com/channel/UCyBPhn5oWduXS7OgeoOJ2lA")
+                                            img(src="/wordpress/src/assets/img/icon/yt_icon_mono_dark.png")#iconYt
+                                .cubeBottom.cubeBlack
+                                    .imgWrap
+                                        a(href="https://www.youtube.com/channel/UCyBPhn5oWduXS7OgeoOJ2lA")                                                                   
+                                            img(src="/wordpress/src/assets/img/icon/yt_icon_mono_dark.png")#iconYt                              
+                        .col-lg.col-3.cubeWrap
+                            .cube
+                                .cubeFront.cubeGreen
+                                    .imgWrap
+                                        a(href="https://www.facebook.com/CAPSULGROUP/")
+                                            img(src="/wordpress/src/assets/img/icon/FB-f-Logo__white.png")#iconFb
+                                .cubeBottom.cubeBlack
+                                    .imgWrap
+                                        a(href="https://www.facebook.com/CAPSULGROUP/")                                        
+                                            img(src="/wordpress/src/assets/img/icon/FB-f-Logo__white.png")#iconFb
+                        .col-lg.col-3.cubeWrap
+                            .cube
+                                .cubeFront.cubeGray
+                                    span
+                                        | CAPSULE
+                                        | OFFICIAL
+                                        | WEBSITE
+                                .cubeBottom.cubeBlack 
+                                    span    
+                                        | CAPSULE
+                                        | OFFICIAL
+                                        | WEBSITE                   
+                        .col-lg-7.order-lg-1.col-12.order-2.cubeLargeWrap
+                            .cube.cubeLarge
+                                .cubeFront.cubeBlack
+                                    span © 2017 CAPSULE. ALL RIGHTS RESERVED
+                                .cubeBottom.cubeGray
+                                    span © 2017 CAPSULE. ALL RIGHTS RESERVED                                
+                        .col-lg.order-lg-2.col-3.order-1.cubeWrap
+                            .cube
+                                .cubeFront.cubeGreen
+                                    a(href="#nav")
+                                        .fa.fa-angle-up.fa-5x
+                                .cubeBottom.cubeBlack
+                                    a(href="#nav")
+                                        .fa.fa-angle-up.fa-5x                                
+                        .col-lg.cubeWrap.order-last.d-none.d-lg-block.d-lg-none
+
+//- //                       _oo0oo_
+//- //                      o8888888o
+//- //                      88" . "88
+//- //                      (| -_- |)
+//- //                      0\  =  /0
+//- //                    ___/`---'\___
+//- //                  .' \\|     |// '.
+//- //                 / \\|||  :  |||// \
+//- //                / _||||| -:- |||||- \
+//- //               |   | \\\  -  /// |   |
+//- //               | \_|  ''\---/''  |_/ |
+//- //               \  .-\__  '-'  ___/-. /
+//- //             ___'. .'  /--.--\  `. .'___
+//- //          ."" '<  `.___\_<|>_/___.' >' "".
+//- //         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+//- //         \  \ `_.   \_ __\ /__ _/   .-` /  /
+//- //     =====`-.____`.___ \_____/___.-`___.-'=====
+//- //                       `=---='
+//- //
+//- //               大佛保佑我CAPSULE永無BUG
+//- //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+//- 育達人生
+//- 達人生育
+//- 人生育達
+//- 生育達人

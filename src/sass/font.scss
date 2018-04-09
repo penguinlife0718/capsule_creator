@@ -1,0 +1,13 @@
+//font
+// @import url('/wordpress/wp-content/themes/capsule/fonts.css');
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,300,700');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300');
+// @import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+@import url('http://fonts.googleapis.com/earlyaccess/notosanstc.css');
+// @import url('http://fonts.googleapis.com/earlyaccess/cwTeXHei.css');
+@font-face {
+    font-family: 'URWDINCond';
+    src: local('URWDINCond-Medium'), url('URWDINCond-Medium.woff2') format('woff2'), url('URWDINCond-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}

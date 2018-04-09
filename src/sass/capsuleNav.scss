@@ -1,0 +1,30 @@
+@import './sourse.scss';
+#nav {
+    .navbar {
+        background-color: $color-nav;
+        height: 60px;
+    }
+    .nav-link {
+        color: $colro-link !important; // background-color: #fff;
+        margin: 0px 10px;
+        font-size: 14px;
+    }
+    .active {
+        color: $color-link-hover;
+    }
+    .nav-link:hover {
+        color: $color-link-hover !important;
+    }
+    .navbar-brand {
+        img {
+            height: 30px;
+            margin-bottom: 5px;
+        }
+    } //導覽列縮放鈕
+    .navbar-toggler {
+        border: 0 !important;
+    }
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='gray' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
+}

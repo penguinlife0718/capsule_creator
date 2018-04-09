@@ -1,0 +1,144 @@
+@import '/wordpress/wp-content/themes/elara/creator/dist/bootstrap/dist/css/bootstrap.css';
+@import '/wordpress/wp-content/themes/elara/creator/dist/bootstrap/dist/css/bootstrap.min.css';
+@import './bootstrap/scss/bootstrap.scss';
+@import './sourse.scss';
+@import './capsuleNav.scss';
+@import './footerButtons.scss';
+$color-blue: #4AACE2;
+$color-gray: #7c7c7c;
+* {
+    text-decoration: none !important;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    color: $color-black;
+}
+
+article {
+    position: relative;
+    display: grid;
+    grid-template-rows: 900px 160px auto;
+    grid-template-areas: "iframe-video" "second"; // grid-area: article;
+    width: 100%;
+    margin-top: 60px;
+    padding: 0 100px;
+    .youtubeVideo {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        grid-area: iframe-video;
+        iframe {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            margin: auto;
+            min-width: 1600px;
+            min-height: 900px;
+            user-select: none;
+        }
+    }
+    .entry-thumb {
+        grid-area: second;
+        display: flex;
+        width: 240px;
+        height: 240px;
+        border: 15px solid #fff;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.2);
+        transform: translateY(-50%);
+        z-index: 1000;
+    }
+    .linkWrap {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 40px 0 40px 240px;
+        grid-area: second;
+        .cube {
+            color: #fff;
+            position: relative;
+            width: 80px;
+            height: 80px;
+            padding: 0;
+            margin: 0 5px;
+            transform-style: preserve-3d;
+            font-weight: 300;
+            font-size: 9px;
+            &:hover {
+                .cubeFront {
+                    transform: rotateX(90deg);
+                    transition: transform 400ms cubic-bezier(0.35, 1, .25, 1);
+                }
+                .cubeBottom {
+                    transform: rotateX(0deg);
+                    transition: transform 400ms cubic-bezier(0.35, 1, .25, 1);
+                }
+            } //front為轉動前 bottom為轉動後
+            //依靠translateX達成轉動效果
+            //translate-origin達成位置調整
+            //貝茲曲線達成轉動滑順效果
+            .cubeFront,
+            .cubeBottom {
+                position: absolute;
+                width: 100%;
+                height: 80px;
+                top: 0;
+                left: 0;
+                text-align: center;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                font-family: "Lato", Verdana, sans-serif; // -webkit-font-smoothing: antialiased;
+                color: white;
+                transition: transform 400ms cubic-bezier(0.35, 1, .25, 1);
+                transform-origin: 0px 40px -40px;
+            }
+            .cubeFront {
+                transform: translateX(0px);
+            }
+            .cubeBottom {
+                transform: rotateX(-90deg);
+            }
+            .cubeFb {
+                background-color: $color-facebook;
+            }
+            .cubeyt {
+                background-color: $color-youtube;
+            }
+            .imgWrap {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100% !important;
+                #iconYt {
+                    height: 25px;
+                }
+            }
+            .fa {
+                color: #fff;
+            }
+        }
+    }
+    p {
+        margin-top: 20px;
+        // padding: 0 100px;
+    }
+}
+
+.introduce {
+    margin: 0;
+    // padding: 0 100px;
+}
+
+.subintroduce {
+    // padding: 0 100px;
+    color: #a7a9ac;
+}
